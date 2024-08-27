@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 const HeroSett = ({ hero, onUpdate }) => {
     const [speed, setSpeed] = useState(hero.speed);
-    const [cooldown, setCooldown] = useState(hero.colldown);
+    const [cooldown, setCooldown] = useState(hero.cooldown);
     const [spellColor, setSpellColor] = useState(hero.spellColor);
 
     const handleSpeedChange = (event) => {
@@ -12,17 +12,17 @@ const HeroSett = ({ hero, onUpdate }) => {
 
     const handleCooldownChange = (event) => {
         setCooldown(Number(event.target.value));
-        onUpdate({ ...hero, colldown: Number(event.target.value) });
+        onUpdate({ ...hero, cooldown: Number(event.target.value) });
     }
 
     const handleSpellColorChange = (event) => {
-        setSpellColor(Number(event.target.value));
-        onUpdate({ ...hero, spellColor: Number(event.target.value) });
+        setSpellColor(event.target.value);
+        onUpdate({ ...hero, spellColor: event.target.value });
     }
 
     return (
         <div>
-            <h3></h3>
+            <h3>Настройки героя</h3>
             <div>
                 <label>Скорость передвижения: </label>
                 <input type='range' min={1} max={5} value={speed} onChange={handleSpeedChange}/>

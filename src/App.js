@@ -17,7 +17,7 @@ function App() {
 
   return (
     <div className="App">
-      <Canvas hero1Sett={hero1Sett} hero2sett={hero2Sett}/>
+      <Canvas hero1Sett={hero1Sett} hero2Sett={hero2Sett}/>
       <div style={{ display: 'flex', justifyContent: 'space-around', width: '100%' }}>
         <HeroSett hero={hero1Sett} onUpdate={setHero1Sett}/>
         <HeroSett hero={hero2Sett} onUpdate={setHero2Sett}/>
